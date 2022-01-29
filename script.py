@@ -23,7 +23,7 @@ def main():
 
         high_quality_audio_stream = video.streams.filter(only_audio=True).order_by('abr').desc().first()
         f = high_quality_audio_stream.download(filename=working_file_name)
-        print('downloaded')
+        
         process = (
             ffmpeg
             .input(f"./{working_file_name}")
